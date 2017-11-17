@@ -11,12 +11,23 @@ def normal_distribution(mean, desviation, numbers):
 
     return normalized_random_numbers
 
+
 def main():
     """ Example """
-    mean = float(input("Media: "))
-    desviation = float(input("Desviación estándar: "))
-    numbers = int(input("Números aleatorios a generar: "))
-    print(normal_distribution(mean, desviation, numbers))
+    mean = float(input("-> Media: "))
+    desviation = float(input("-> Desviación estándar: "))
+    numbers = int(input("-> Números aleatorios a generar: "))
+    reference_number = int(input("\n\t -> Número de referencia: "))
+    option = input(""" 
+            ¿Qué valores desea conocer con respecto al número de referencia?
+            a) Mayores
+            b) Menores
+
+            Opción: """)
+    normalized_random_numbers = normal_distribution(mean, desviation, numbers)
+    result = list(filter(lambda x: x > reference_number, normalized_random_numbers)) if option.lower() == 'a' else list(filter(lambda x: x < reference_number, normalized_random_numbers))
+
+    print("\n\n -> Valores obtenidos: {result_len} \n\n{result}".format(result_len=len(result), result=result))
 
 
 if __name__ == '__main__':
