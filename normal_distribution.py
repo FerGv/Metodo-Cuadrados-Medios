@@ -18,15 +18,19 @@ def main():
     desviation = float(input("-> Desviación estándar: "))
     numbers = int(input("-> Números aleatorios a generar: "))
     reference_number = int(input("\n\t -> Número de referencia: "))
-    option = input(""" 
+    option_1 = input(""" 
             ¿Qué valores desea conocer con respecto al número de referencia?
             a) Mayores
             b) Menores
 
             Opción: """)
-    normalized_random_numbers = normal_distribution(mean, desviation, numbers)
-    result = list(filter(lambda x: x > reference_number, normalized_random_numbers)) if option.lower() == 'a' else list(filter(lambda x: x < reference_number, normalized_random_numbers))
+    option_2 = input("¿Desea descartar los números negativos? (s/n): ")
 
+    normalized_random_numbers = normal_distribution(mean, desviation, numbers)
+    result = list(filter(lambda x: x > reference_number, normalized_random_numbers)) if option_1.lower() == 'a'\
+                                    else list(filter(lambda x: x < reference_number, normalized_random_numbers))
+    if option_2.lower() == 's':
+        result = list(filter(lambda x: x > 0, result))
     print("\n\n -> Valores obtenidos: {result_len} \n\n{result}".format(result_len=len(result), result=result))
 
 
