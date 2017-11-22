@@ -1,4 +1,14 @@
-def mixed_congruential(seed, multiplicative_constant, additive_constant, module):
+def mixed_congruential(initial_seed, multiplicative_constant, additive_constant, module):
+    """
+        Arguments:
+        -> initial_seed -- type: float => Initial seed to generate random numbers
+        -> multiplicative_constant -- type: float => Number to multiply by the seed
+        -> additive_constant -- type: float => Number to add to the seed
+        -> module -- type: float
+
+        Return a list.
+    """
+
     next_seed = None
     seed = initial_seed
     random_numbers = []
@@ -13,11 +23,13 @@ def mixed_congruential(seed, multiplicative_constant, additive_constant, module)
 
 def main():
     """ Example """
-    initial_seed = int(input("Semilla: "))
-    a = int(input("Constante multiplicativa (a): "))
-    c = int(input("Constante aditiva (c): "))
-    m = int(input("Módulo m: "))
-    print(mixed_congruential(seed, a, c, m))
+
+    initial_seed = float(input("Semilla: "))
+    a = float(input("Constante multiplicativa (a): "))
+    c = float(input("Constante aditiva (c): "))
+    m = float(input("Módulo (m): "))
+
+    print(mixed_congruential(initial_seed, a, c, m))
     
 
 if __name__ == '__main__':

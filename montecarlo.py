@@ -26,6 +26,7 @@ def montecarlo(frequencies, numbers):
 
 def main():
     """ Example """
+    
     frequencies = [(1,0.1), (2,0.5), (3,0.4)]
     numbers = [0.7, 0.3, 0.01, 0.9]
     print(montecarlo(frequencies, numbers))

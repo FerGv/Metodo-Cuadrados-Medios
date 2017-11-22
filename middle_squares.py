@@ -1,4 +1,12 @@
 def middle_squares(seed, numbers):
+    """
+        Arguments:
+        -> seed -- type: string => Seed to generate random numbers
+        -> numbers -- type: int => Numbers to generate
+
+        Return a list.
+    """
+
     random_numbers = []
     
     for number in range(numbers):
@@ -27,9 +35,12 @@ def middle_squares(seed, numbers):
 
 def main():
     """ Example """
+
     seed = input("Semilla: ")
-    numbers = int(input("Cuántos números desea obtener?: "))
+    numbers = int(input("¿Cuántos números desea obtener?: "))
+
     print(middle_squares(seed, numbers))
+
 
 if __name__ == '__main__':
     main()
