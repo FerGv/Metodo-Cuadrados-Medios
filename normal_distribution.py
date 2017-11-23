@@ -25,7 +25,7 @@ def normal_distribution(mean, deviation, numbers):
 def main():
     """ Example """
 
-    mean = float(input("-> Media: "))
+    mean = float(input("\n\n-> Media: "))
     deviation = float(input("-> Desviación estándar: "))
     numbers = int(input("-> Números aleatorios a generar: "))
     reference_number = int(input("\n\t -> Número de referencia: "))
@@ -35,7 +35,7 @@ def main():
             b) Menores
 
             Opción: """)
-    option_2 = input("¿Desea descartar los números negativos? (s/n): ")
+    option_2 = input("\n\t    ¿Desea descartar los valores negativos? (s/n): ")
 
     normalized_random_numbers = normal_distribution(mean, deviation, numbers)
     result = list(filter(lambda x: x > reference_number, normalized_random_numbers)) if option_1.lower() == 'a'\
@@ -43,8 +43,9 @@ def main():
     if option_2.lower() == 's':
         result = list(filter(lambda x: x > 0, result))
 
-    print("\n\n -> Valores obtenidos: {result_len} \n\n{result}".format(result_len=len(result), result=result))
-
+    print("\n\n -> Valores obtenidos: {result_len} \n".format(result_len=len(result)))
+    for value in result:
+        print("{:.2f}".format(value), end=", ")
 
 if __name__ == '__main__':
     main()
