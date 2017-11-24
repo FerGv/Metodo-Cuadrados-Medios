@@ -43,9 +43,9 @@ def main():
     if option_2.lower() == 's':
         result = list(filter(lambda x: x > 0, result))
 
-    print("\n\n -> Valores obtenidos: {result_len} \n".format(result_len=len(result)))
+    print(f"\n\n -> Valores obtenidos: {len(result)} \n")
     for value in result:
-        print("{:.2f}".format(value), end=", ")
+        print(f"{value:.2f}", end=", ")
 
 if __name__ == '__main__':
     main()
